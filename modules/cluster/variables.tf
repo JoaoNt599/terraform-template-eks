@@ -8,3 +8,14 @@ variable "tags" {
   description = "A map of tags to assign to resources"
   default     = {}
 }
+
+variable "public_subnet_1a" {
+  type        = string
+  description = "Subnet to create EKS cluster AZ 1a"
+}
+
+variable "public_subnet_1b" {
+  type        = string
+  description = "Subnet to create EKS cluster AZ 1b"
+}
+
