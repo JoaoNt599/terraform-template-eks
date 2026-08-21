@@ -14,7 +14,10 @@ module "eks_cluster" {
 }
 
 module "eks_managed_node_group" {
-  source           = "./modules/managed-node-group"
-  project_name     = var.project_name
-  tags             = local.tags
+  source            = "./modules/managed-node-group"
+  project_name      = var.project_name
+  tags              = local.tags
+  cluster_name      = module.eks_cluster.cluster_name
+  private_subnet_1a = module.network.private_subnet_1a
+  private_subnet_1b = module.network.private_subnet_1b
 }

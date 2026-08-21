@@ -8,3 +8,18 @@ variable "tags" {
   description = "Tags to be added to AWS resources"
   default = {}
 }
+
+variable "cluster_name" {
+  type = string
+  description = "EKS cluster name to associate the managed node group with"
+}
+
+variable "private_subnet_1a" {
+  type = string
+  description = "Private subnet ID for the managed node group"
+}
+
+variable "private_subnet_1b" {
+  type = string
+  description = "Private subnet ID for the managed node group"
+}
