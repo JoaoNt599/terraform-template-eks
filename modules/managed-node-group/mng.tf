@@ -13,9 +13,12 @@ resource "aws_eks_node_group" "eks_managed_node_group" {
     min_size     = 1
   }
 
-  tags = {
-    Name = "${var.project_name}-managed-node-group"
-  }
+  tags = merge(
+    var.tags,
+    {
+      "Name" = "${var.project_name}-managed-node-group"
+    }
+  )
 
     depends_on = [
     aws_iam_role_policy_attachment.eks_mng_role_attachment_worker,
