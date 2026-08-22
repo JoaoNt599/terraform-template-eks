@@ -21,3 +21,9 @@ module "eks_managed_node_group" {
   private_subnet_1a = module.network.private_subnet_1a
   private_subnet_1b = module.network.private_subnet_1b
 }
+
+module "eks_alb" {
+  source       = "./modules/alb"
+  project_name = var.project_name
+  tags         = local.tags
+}
