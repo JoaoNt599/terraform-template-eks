@@ -23,7 +23,8 @@ module "eks_managed_node_group" {
 }
 
 module "eks_alb" {
-  source       = "./modules/alb"
-  project_name = var.project_name
-  tags         = local.tags
+  source            = "./modules/alb"
+  project_name      = var.project_name
+  tags              = local.tags
+  oidc_provider_arn = module.eks_cluster.oidc
 }

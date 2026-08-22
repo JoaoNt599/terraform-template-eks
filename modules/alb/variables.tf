@@ -8,3 +8,8 @@ variable "tags" {
   description = "Tags to be added to AWS resources"
   default = {}
 }
+
+variable "oidc_provider_arn" {
+  type = string
+  description = "OIDC provider ARN for the EKS cluster"
+}
